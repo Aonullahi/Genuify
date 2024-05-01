@@ -1,0 +1,339 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-justify-hyphens {
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
+.text-bold-center-black {
+  font-weight: 600;
+  /* Font-semibold generally corresponds to a font-weight of 600 */
+  color: black;
+  /* Sets the text color to black */
+  text-align: center;
+  /* Centers the text */
+}
+
+
+.h-screen {
+  height: 90vh;
+
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.bg-gray-800 {
+  background-color: #121c23;
+  /* Dark gray background */
+  opacity: 0.9;
+  /* Affects the whole element */
+}
+
+.text-white {
+  color: #ffffff;
+  /* White text color */
+}
+
+.focus\:ring {
+  outline: none;
+  border-color: #3498db;
+  /* Blue border color on focus */
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animated-title {
+  animation: 3s ease-out 0s 1 slideInFromLeft;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-20px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* PatientForm.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body {
+  background-color: #121212;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+
+.form-container {
+
+  animation: bounce 20s infinite ease-in-out;
+  background: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  /* Similar to shadow-md in Tailwind */
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border-radius: 0.75rem;
+  /* Similar to rounded-lg in Tailwind */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 2rem;
+  width: 24rem;
+  /* 96 pixels width, equivalent to w-96 in Tailwind */
+  max-width: 2000px;
+  /* Adjust max-width as needed */
+  margin: auto;
+
+}
+
+.input-style {
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.button-style {
+  background: linear-gradient(90deg, rgba(69, 103, 211, 1) 0%, rgba(42, 157, 143, 1) 100%);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button-style:hover {
+  transform: scale(1.05);
+}
+
+.label-style {
+  margin-bottom: 8px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.activity-cards-container {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+}
+
+
+
+.activity-card {
+  background: rgba(49, 80, 107);
+  color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  min-width: 100px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px;
+  margin-bottom: 2rem;
+}
+
+.activity-card:hover {
+  background: rgba(55, 65, 80);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Styles for the start/stop recording button */
+.record-button {
+  background: linear-gradient(to right, #374150, #0A0F1C);
+  color: white;
+  border: none;
+  padding: 7px 5px;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.record-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Additional style when recording is in progress */
+.record-button.recording {
+  background: linear-gradient(to right, #c94e4e, #f78f8f);
+}
+
+/* Style for the submit video button, using the already defined green-accent class */
+.submit-video-button {
+  background: linear-gradient(to right, #11998e, #38ef7d);
+  color: white;
+  border: none;
+  padding: 7px 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 20s ease-in-out, box-shadow 20s ease-in-out;
+}
+
+.submit-video-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.analysis-content {
+  background: #f8f9fa;
+  border-left: 4px solid #5cb85c;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-rationale,
+.analysis-description {
+  margin-bottom: 0.5rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900');
+
+
+.analysis-rationale {
+  font-family: 'Rubik';
+  display: block;
+  color: black;
+}
+
+.analysis-description {
+  font-family: 'Rubik';
+  color: black;
+}
+
+.analysis-description-title {
+  font-family: 'Rubik';
+  font-weight: bold;
+  display: block;
+}
+
+
+.progress-bar-container {
+  background-color: #ddd;
+  border-radius: 2px;
+}
+
+.progress-bar {
+  height: 5px;
+  width: 0;
+  background-color: #4caf50;
+  animation: loading-bar 2s ease-in-out infinite;
+  border-radius: 2px;
+}
+
+@keyframes loading-bar {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+
+.form-submission-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: blue;
+  animation: progress-animate 7s linear infinite;
+}
+
+@keyframes progress-animate {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+
+.background-container {
+  position: relative;
+  z-index: 1;
+}
+
+.background-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('/mys.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: -1;
+}
