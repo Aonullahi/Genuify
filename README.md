@@ -67,6 +67,10 @@ npm run dev
 This will start the Next.js server, and you should be able to access the application at `http://localhost:3000`.
 
 
+## Accessing the Live Application
+Genuify web application is now live! You can access it [here](https://genuify-private-dibmtqr4la-uc.a.run.app/). For the best experience, we recommend testing the application on a PC.
+
+
 ## Troubleshooting
 
 If you encounter issues with Google Cloud services, check the following:
